@@ -129,39 +129,81 @@
 // );
 
 // --- jsx attriubutes and styling ----
+// import React from "react";
+// import ReactDOM from "react-dom";
+// import './index.css';
+
+// const pic = "https://picsum.photos/200";
+
+// ReactDOM.render(
+//   <div>
+//     {/* <h1 className="heading" contentEditable="true" spellCheck="false"> */}
+//     <h1 className="heading">My Favourite Foods</h1>
+//     {/* <ul>
+//       <li>Bacon</li>
+//       <li>Jamon</li>
+//       <li>Noodles</li>
+//     </ul> */}
+//     <div>
+//       <img src={pic + "?grayscale"} alt="random" />
+//       <img
+//         alt="dubuyo"
+//         className="food-img"
+//         src="https://th.bing.com/th/id/R.812ded33fa7831848fdf3c2100d6be0e?rik=xX7L%2bBAozYokdg&riu=http%3a%2f%2fwww.sungeiwang.com%2fwp-content%2fuploads%2f2018%2f08%2fDubuYo.jpg&ehk=KDj%2bhX0jkq3%2fYl6E2TknTiQZEuifnif76Dzw03uvyPM%3d&risl=&pid=ImgRaw&r=0"
+//       />
+//       <img
+//         alt="fish"
+//         className="food-img"
+//         src="https://b.zmtcdn.com/data/menus/886/7400886/1afe15c9f262ca64e3281eafb8d1e51d.jpg"
+//       />
+//       <img
+//         alt="shawarma"
+//         className="food-img"
+//         src="https://th.bing.com/th/id/R.a07f03e8367a17aa0e5a37daa66ebd06?rik=6aPoxwJrY2Cu6g&riu=http%3a%2f%2fwww.urdupalace.com%2fwp-content%2fuploads%2f2016%2f11%2fshawarma-recipe-in-urdu.jpg&ehk=GVVnFP9GSdQZ4ae1jZPBnm3CZxUULYKqd0%2fNRmsQKd0%3d&risl=&pid=ImgRaw&r=0"
+//       />
+//     </div>
+//   </div>,
+//   document.getElementById("root")
+// );
+
+// --- props ---
 import React from "react";
 import ReactDOM from "react-dom";
-import './index.css';
 
-const pic = "https://picsum.photos/200";
+function Card(props) {
+  return (
+    <div>
+      <h2>{props.name}</h2>
+      <img src={props.image} alt="avatar_img" />
+      <p>{props.tel}</p>
+      <p>{props.email}</p>
+    </div>
+  );
+}
 
 ReactDOM.render(
   <div>
-    {/* <h1 className="heading" contentEditable="true" spellCheck="false"> */}
-    <h1 className="heading">My Favourite Foods</h1>
-    {/* <ul>
-      <li>Bacon</li>
-      <li>Jamon</li>
-      <li>Noodles</li>
-    </ul> */}
-    <div>
-      <img src={pic + "?grayscale"} alt="random" />
-      <img
-        alt="dubuyo"
-        className="food-img"
-        src="https://th.bing.com/th/id/R.812ded33fa7831848fdf3c2100d6be0e?rik=xX7L%2bBAozYokdg&riu=http%3a%2f%2fwww.sungeiwang.com%2fwp-content%2fuploads%2f2018%2f08%2fDubuYo.jpg&ehk=KDj%2bhX0jkq3%2fYl6E2TknTiQZEuifnif76Dzw03uvyPM%3d&risl=&pid=ImgRaw&r=0"
-      />
-      <img
-        alt="fish"
-        className="food-img"
-        src="https://b.zmtcdn.com/data/menus/886/7400886/1afe15c9f262ca64e3281eafb8d1e51d.jpg"
-      />
-      <img
-        alt="shawarma"
-        className="food-img"
-        src="https://th.bing.com/th/id/R.a07f03e8367a17aa0e5a37daa66ebd06?rik=6aPoxwJrY2Cu6g&riu=http%3a%2f%2fwww.urdupalace.com%2fwp-content%2fuploads%2f2016%2f11%2fshawarma-recipe-in-urdu.jpg&ehk=GVVnFP9GSdQZ4ae1jZPBnm3CZxUULYKqd0%2fNRmsQKd0%3d&risl=&pid=ImgRaw&r=0"
-      />
-    </div>
+    <h1>My Contacts</h1>
+    <Card
+      name="Beyonce"
+      image="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
+      tel="+123 456 789"
+      email="b@beyonce.com"
+    />
+
+    <Card
+      name="Jack Bauer"
+      image="https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg"
+      tel="+987 654 321"
+      email="jack@nowhere.com"
+    />
+
+    <Card
+      name="Chuck Norris"
+      image="https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png"
+      tel="+918 372 574"
+      email="gmail@chucknorris.com"
+    />
   </div>,
   document.getElementById("root")
 );
